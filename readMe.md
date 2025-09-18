@@ -23,5 +23,5 @@ o	 Once removed, the book should be deleted from the JSON data and the HTML tabl
 o	 Include basic validation to ensure that book details are not left blank and that the year is a valid number.
 o	 Describe how you 
 	handle validation errors and
-	 ensure that users are prompted to correct any mistakes before updating or removing data.
+	 ensure that users are prompted to correct any mistakes before updating or removing data..
 
