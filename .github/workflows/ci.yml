@@ -1,0 +1,38 @@
+name: Savannah Library CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  test:
+   #  Fresh Ubuntu machine
+    runs-on: ubuntu-latest
+
+    steps:
+      # Checkout repository
+       - name: Checkout repository
+         uses: actions/checkout@v4
+
+      # Install Node.js 22
+       - name: Setup Node
+         uses: actions/setup-node@v4
+         with:
+          node-version: 22
+
+      # Install exact project dependencies
+       - name: Install dependencies
+         run: npm ci
+
+      # Run Tests
+       - name: Run Vitest tests
+         run: npm test -- --run
+
+      # Prepare playwright browsers &  run tests
+       - name: Install Playwright browsers
+         run: npx playwright install --with-deps
+
+       - name: Run Playwright E2E tests
+         run: npm run e2e
+
+
