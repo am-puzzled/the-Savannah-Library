@@ -1,0 +1,30 @@
+{
+  "name": "the-savannah-library",
+  "version": "1.0.0",
+  "description": "This was an iu web dev.t workbook task:",
+  "main": "theSavannahLibrary.js",
+  "scripts": {
+    "test": "vitest",
+    "e2e": "playwright test E2E-Tests/library.spec.js",
+    "report":"npx playwright show-report"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/am-puzzled/the-Savannah-Library.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/am-puzzled/the-Savannah-Library/issues"
+  },
+  "homepage": "https://github.com/am-puzzled/the-Savannah-Library#readme",
+  "devDependencies": {
+    "@playwright/test": "^1.62.1",
+    "@types/node": "^26.2.0",
+    "http-server": "^14.1.1",
+    "jsdom": "^29.1.1",
+    "vitest": "^4.1.10"
+  }
+}

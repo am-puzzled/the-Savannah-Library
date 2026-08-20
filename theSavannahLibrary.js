@@ -1,5 +1,11 @@
+import { normalize } from "./utils.js";
 
+// create required buttons
+const updateButton = document.querySelector(".update");
+const deleteButton = document.querySelector(".delete");
 
+updateButton.addEventListener("click", updateContent);
+deleteButton.addEventListener("click", deleteContent);
   
   //  we need to define json objects to represent INITIAL 3 books
     const book = {
@@ -192,12 +198,7 @@
                 console.log(customBooks);
 
               // check if we have that book we want to change
-                //Use regex to remove all spaces in the name for easier match
-
-                  const normalize = str =>
-                    str.toLowerCase().replace(/\s+/g, "");
-
-                //use the regex here
+                // normalize--uses regex to remove all spaces in the name for easier match
                   const match = customBooks.find(book => normalize(book.title) === normalize(oldTitle.value));
 
                       if (match) {
@@ -298,9 +299,6 @@
           
 
         //delete the previous one from the array
-          const normalize = str =>
-                str.toLowerCase().replace(/\s+/g, "");
-
           customBooks = customBooks.filter(book=> normalize(book.id) !== normalize(oldTitle.value));
         
         //add the new one to the array
@@ -424,11 +422,6 @@
                 console.log(customBooks);
 
               // check if we have that book we want to change
-                //Use regex to remove all spaces in the name for easier match
-
-                  const normalize = str =>
-                    str.toLowerCase().replace(/\s+/g, "");
-
                 //use the regex here
                   const match = customBooks.find(book => normalize(book.title) === normalize(oldTitle.value));
 
@@ -491,13 +484,6 @@
   function continueDeleting(oldTitle){
     
               //Use regex to remove all spaces in the name for easier match
-                const normalize = str =>
-
-              // If str is a number then there will be an error
-               //convert everything into a string first b4 comparing
-                String(str).toLowerCase().replace(/\s+/g, "");
-
-              //use the regex here
                 const match = customBooks.find(book => normalize(book.id) === normalize(oldTitle.value));
 
               //filter out that selected book and return a new array without it
